@@ -443,139 +443,193 @@ HACK_SMALI = r"""
     sput-object v0, Lcom/cmplay/dancingline/Hack;->levels:[Ljava/lang/String;
 
     .line 78
-    const/16 v0, 0x18
+    const/16 v0, 0x21
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const-string v1, "CowBoy"
+    const-string v1, "Line"
 
     aput-object v1, v0, v3
 
-    const-string v1, "Particle2"
+    const-string v1, "Cap"
 
     aput-object v1, v0, v4
 
-    const-string v1, "Particle3"
+    const-string v1, "CowBoy"
 
     aput-object v1, v0, v5
 
-    const-string v1, "Mascot"
+    const-string v1, "Headphones"
 
     aput-object v1, v0, v6
 
-    const-string v1, "Rainbow"
+    const-string v1, "Particle2"
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
 
-    const-string v2, "Module"
+    const-string v2, "Particle3"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    const-string v2, "Stalagmite"
+    const-string v2, "Mascot"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    const-string v2, "RockLine"
+    const-string v2, "Rainbow"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    const-string v2, "ChineseDragon"
+    const-string v2, "Module"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    const-string v2, "Snowball"
+    const-string v2, "Lightining"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
 
-    const-string v2, "Balloon"
+    const-string v2, "Stalagmite"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    const-string v2, "Cloud"
+    const-string v2, "RockLine"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xc
 
-    const-string v2, "Light"
+    const-string v2, "ChineseDragon"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xd
 
-    const-string v2, "TombStone"
+    const-string v2, "Chaos"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xe
 
-    const-string v2, "Frankenstein"
+    const-string v2, "Mountains"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xf
 
-    const-string v2, "Witch"
+    const-string v2, "Jelly"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x10
 
-    const-string v2, "Snake"
+    const-string v2, "Snowball"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x11
 
-    const-string v2, "Slither"
+    const-string v2, "PaintBrush"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x12
 
-    const-string v2, "Arrow"
+    const-string v2, "Balloon"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x13
 
-    const-string v2, "Robot"
+    const-string v2, "Cloud"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x14
 
-    const-string v2, "Domino"
+    const-string v2, "Light"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x15
 
-    const-string v2, "Jester"
+    const-string v2, "TombStone"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x16
 
-    const-string v2, "Mage"
+    const-string v2, "Frankenstein"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x17
+
+    const-string v2, "Witch"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x18
+
+    const-string v2, "Snake"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x19
+
+    const-string v2, "Slither"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1a
+
+    const-string v2, "Arrow"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1b
+
+    const-string v2, "Robot"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1c
+
+    const-string v2, "Football"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1d
+
+    const-string v2, "Domino"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1e
+
+    const-string v2, "Jester"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1f
+
+    const-string v2, "Mage"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x20
 
     const-string v2, "Skeleton"
 
@@ -602,77 +656,77 @@ HACK_SMALI = r"""
     .prologue
     const/4 v7, 0x1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .line 106
-    const-string v0, "com.cmplay.dancingline.v2.playerprefs"
+    .line 115
+    const-string v1, "com.cmplay.dancingline.v2.playerprefs"
 
-    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {p0, v1, v0}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 108
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    .line 116
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
 
-    .line 110
+    .line 118
     const-string v3, "subscribe_key_time"
 
     const v4, 0x7fffffff
 
     invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 111
+    .line 119
     const-string v3, "subscribe_key_number"
 
     const/4 v4, 0x2
 
     invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 113
-    const-string v3, "is_first_unlock"
+    .line 121
+    const-string v3, "mod_patch_version"
 
-    invoke-interface {v0, v3, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v1, v3, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_64
+    if-eq v1, v7, :cond_63
 
-    .line 114
-    const-string v0, "Decorate_HatType_Unlock"
+    .line 122
+    const-string v1, "Decorate_HatType_Unlock"
 
     const-string v3, "1-2-3-4-5-5-4-3-2-1"
 
-    invoke-interface {v2, v0, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v2, v1, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 115
-    const-string v0, "infinityHeartModeTimeEnd"
-
-    const-string v3, "2500,4,15,20,49,30"
-
-    invoke-interface {v2, v0, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    .line 116
-    const-string v0, "infinityModeTimeEnd"
+    .line 123
+    const-string v1, "infinityHeartModeTimeEnd"
 
     const-string v3, "2500,4,15,20,49,30"
 
-    invoke-interface {v2, v0, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v2, v1, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 118
+    .line 124
+    const-string v1, "infinityModeTimeEnd"
+
+    const-string v3, "2500,4,15,20,49,30"
+
+    invoke-interface {v2, v1, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 126
     sget-object v3, Lcom/cmplay/dancingline/Hack;->levels:[Ljava/lang/String;
 
     array-length v4, v3
 
-    move v0, v1
+    move v1, v0
 
     :goto_3b
-    if-ge v0, v4, :cond_4b
+    if-ge v1, v4, :cond_4b
 
-    aget-object v5, v3, v0
+    aget-object v5, v3, v1
 
-    .line 119
+    .line 127
     const-string v6, "levelUnlockDataName_"
 
     invoke-virtual {v6, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
@@ -681,49 +735,47 @@ HACK_SMALI = r"""
 
     invoke-interface {v2, v5, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 118
-    add-int/lit8 v0, v0, 0x1
+    .line 126
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_3b
 
-    .line 122
+    .line 130
     :cond_4b
-    sget-object v3, Lcom/cmplay/dancingline/Hack;->skins:[Ljava/lang/String;
+    sget-object v1, Lcom/cmplay/dancingline/Hack;->skins:[Ljava/lang/String;
 
-    array-length v4, v3
+    array-length v3, v1
 
-    move v0, v1
+    :goto_4e
+    if-ge v0, v3, :cond_5e
 
-    :goto_4f
-    if-ge v0, v4, :cond_5f
+    aget-object v4, v1, v0
 
-    aget-object v5, v3, v0
+    .line 131
+    const-string v5, "UnlockedSettingsDataKey_"
 
-    .line 123
-    const-string v6, "UnlockedSettingsDataKey_"
+    invoke-virtual {v5, v4}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v6, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v4
 
-    move-result-object v5
-
-    invoke-interface {v2, v5, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    .line 122
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_4f
-
-    .line 126
-    :cond_5f
-    const-string v0, "is_first_unlock"
-
-    invoke-interface {v2, v0, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    .line 129
-    :cond_64
-    invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {v2, v4, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     .line 130
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_4e
+
+    .line 134
+    :cond_5e
+    const-string v0, "mod_patch_version"
+
+    invoke-interface {v2, v0, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    .line 137
+    :cond_63
+    invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 138
     return-void
 .end method
 """
