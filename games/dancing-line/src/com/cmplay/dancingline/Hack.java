@@ -117,6 +117,7 @@ public class Hack {
 
         settings.putInt("subscribe_key_time", Integer.MAX_VALUE);
         settings.putInt("subscribe_key_number", 2);
+        settings.putInt("AreAdsBlockedNew", 1);
 
         if (prefs.getInt("mod_patch_version", 0) != 1) {
             settings.putString("Decorate_HatType_Unlock", "1-2-3-4-5-5-4-3-2-1");

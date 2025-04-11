@@ -2,7 +2,7 @@ import re
 import sys
 from pathlib import Path
 
-RM_METHODS = (
+BASE_REMOVE_METHODS = (
     "initAd",
     "onActivityResult",
     "onDestroy",
@@ -13,7 +13,7 @@ RM_METHODS = (
     "onStop"
 )
 
-RM_PERMISSIONS = (
+MANIFEST_REMOVE_PERMISSIONS = (
     "android.permission.READ_EXTERNAL_STORAGE",
     "android.permission.CHANGE_WIFI_STATE",
     "android.permission.REQUEST_INSTALL_PACKAGES",
@@ -654,9 +654,9 @@ HACK_SMALI = r"""
     .registers 9
 
     .prologue
-    const/4 v7, 0x1
-
     const/4 v0, 0x0
+
+    const/4 v7, 0x1
 
     .line 115
     const-string v1, "com.cmplay.dancingline.v2.playerprefs"
@@ -684,49 +684,54 @@ HACK_SMALI = r"""
 
     invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 121
+    .line 120
+    const-string v3, "AreAdsBlockedNew"
+
+    invoke-interface {v2, v3, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    .line 122
     const-string v3, "mod_patch_version"
 
     invoke-interface {v1, v3, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
-    if-eq v1, v7, :cond_63
+    if-eq v1, v7, :cond_68
 
-    .line 122
+    .line 123
     const-string v1, "Decorate_HatType_Unlock"
 
     const-string v3, "1-2-3-4-5-5-4-3-2-1"
 
     invoke-interface {v2, v1, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 123
+    .line 124
     const-string v1, "infinityHeartModeTimeEnd"
 
     const-string v3, "2500,4,15,20,49,30"
 
     invoke-interface {v2, v1, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 124
+    .line 125
     const-string v1, "infinityModeTimeEnd"
 
     const-string v3, "2500,4,15,20,49,30"
 
     invoke-interface {v2, v1, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 126
+    .line 127
     sget-object v3, Lcom/cmplay/dancingline/Hack;->levels:[Ljava/lang/String;
 
     array-length v4, v3
 
     move v1, v0
 
-    :goto_3b
-    if-ge v1, v4, :cond_4b
+    :goto_40
+    if-ge v1, v4, :cond_50
 
     aget-object v5, v3, v1
 
-    .line 127
+    .line 128
     const-string v6, "levelUnlockDataName_"
 
     invoke-virtual {v6, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
@@ -735,23 +740,23 @@ HACK_SMALI = r"""
 
     invoke-interface {v2, v5, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 126
+    .line 127
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3b
+    goto :goto_40
 
-    .line 130
-    :cond_4b
+    .line 131
+    :cond_50
     sget-object v1, Lcom/cmplay/dancingline/Hack;->skins:[Ljava/lang/String;
 
     array-length v3, v1
 
-    :goto_4e
-    if-ge v0, v3, :cond_5e
+    :goto_53
+    if-ge v0, v3, :cond_63
 
     aget-object v4, v1, v0
 
-    .line 131
+    .line 132
     const-string v5, "UnlockedSettingsDataKey_"
 
     invoke-virtual {v5, v4}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
@@ -760,22 +765,22 @@ HACK_SMALI = r"""
 
     invoke-interface {v2, v4, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 130
+    .line 131
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_4e
+    goto :goto_53
 
-    .line 134
-    :cond_5e
+    .line 135
+    :cond_63
     const-string v0, "mod_patch_version"
 
     invoke-interface {v2, v0, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 137
-    :cond_63
+    .line 138
+    :cond_68
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 138
+    .line 139
     return-void
 .end method
 """
@@ -1018,7 +1023,7 @@ def patch_source(source_path):
         exit(1)
 
     with open(f"{source_path}/smali/com/cmplay/dancingline/BaseAppActivity.smali", "r+") as file:
-        data = re.sub(fr'.method (?:protected|public|private) (?:{'|'.join(RM_METHODS)})(?s:.*?).end method|.line 49(?s:.*?)(?=return-void)', '', file.read())
+        data = re.sub(fr'.method (?:protected|public|private) (?:{'|'.join(BASE_REMOVE_METHODS)})(?s:.*?).end method|.line 49(?s:.*?)(?=return-void)', '', file.read())
         file.seek(0)
         file.write(data)
         file.truncate()
@@ -1031,7 +1036,7 @@ def patch_source(source_path):
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             ''', data)
-        data = re.sub(fr'<uses-permission.*?(?:{'|'.join(RM_PERMISSIONS)}).*>', '', data)
+        data = re.sub(fr'<uses-permission.*?(?:{'|'.join(MANIFEST_REMOVE_PERMISSIONS)}).*>', '', data)
         file.seek(0)
         file.write(data)
         file.truncate()
